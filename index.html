@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex Box Visualizer</title>
+    <link rel="stylesheet" href="./visualize.css">
+</head>
+<body>
+    <div id="title-block">
+        <h1>FlexBox Visualizer</h1>
+        <p>
+                <span>Initial Setup:</span> A <i><b>Flexbox</b></i> with 3 <i><b>flex items</b></i> with a <i><b>gap</b></i> of 10px between each item. <br>
+            </p>
+    </div>
+    <!-- FlexBox Example -->
+    <div id="visualizer">
+            <aside>
+                <div id="flex-direction" title="Defines the flex direction.">
+                        <label><b><i>Flex-Direction</i></b></label>
+                        <select id="flex-direction-value" onchange="flexDirection()">
+                            <option value="row" selected>Row</option>
+                            <option value="row-reverse">Row - Reverse</option>
+                            <option value="column">Column</option>
+                            <option value="column-reverse">Column - Reverse</option>
+                        </select>
+                        <button type="reset" onclick="flexDirection_Reset()">Reset</button>
+                </div>
+                <div id="flex-wrap" title="Defines the flex wrap property.">
+                        <label><i><b>Flex-Wrap</i></b></label>
+                        <select id="flex-wrap-value" onchange="flexWrap()">
+                            <option value="wrap">wrap</option>
+                            <option value="nowrap" selected>No wrap</option>
+                            <option value="wrap-reverse">wrap - Reverse</option>
+                        </select>
+                        <button type="reset" onclick="flexWrap_Reset()">Reset</button>
+                </div>
+                <div id="justify-content" title="Defines the space distribution between child elements along main-axis.">
+                        <label><i><b>Justify-Content </i></b></label>
+                        <select id="justify-content-value" onchange="justifyContent()">
+                            <option value="flex-start" selected>flex-start</option>
+                            <option value="flex-end">flex-end</option>
+                            <option value="center">center</option>
+                            <option value="space-around">space-around</option>
+                            <option value="space-between">space-between</option>
+                            <option value="space-evenly">space-evenly</option>
+                        </select>
+                        <button type="reset" onclick="justifyContent_Reset()">Reset</button>
+                </div>
+                <div id="align-Items" title="Defines the align self value on all direct children.">
+                        <label><i><b>Align-Items</i></b></label>
+                        <select id="align-items-value" onchange="alignItems()">
+                            <option value="flex-start">flex-start</option>
+                            <option value="flex-end">flex-end</option>
+                            <option value="center">center</option>
+                            <option value="stretch" selected>stretch</option>
+                            <option value="baseline">baseline</option>
+                        </select>
+                        <button type="reset" onclick="alignItems_Reset()">Reset</button>
+                </div>
+                <div id="align-content" title="Defines the space distribution between child elements along cross axis.">
+                        <!-- 
+                            Here &nbsp; is added in label to accomodate width of button as per parent element 
+                        -->
+                        <label><i><b>Align-Content &nbsp;</i></b></label>
+                        <select id="align-content-value" onchange="alignContent()" disabled>
+                            <option value="flex-end">flex-end</option>
+                            <option value="center">center</option>
+                            <option value="space-around">space-around</option>
+                            <option value="space-between">space-between</option>
+                            <option value="stretch" selected>stretch</option>
+                            <!-- <option value="">flex-start</option> -->
+                            <!-- <option value="">space-evenly</option> -->
+                        </select>
+                        <button type="reset" onclick="alignContent_Reset()">Reset</button>
+                </div>
+                <button title="Gives the flex default design with specified attributes." onclick="reset_default()" id="reset-button">Reset to default</button>
+            </aside>
+            <div id="output-visualizer">
+                <div class="div-section" id="div-1">1</div>
+                <div class="div-section" id="div-2">2</div>
+                <div class="div-section" id="div-3">3</div>
+            </div>
+    </div>
+    <script src="./visualize.js"></script>
+</body>
+</html>
